@@ -1,0 +1,16 @@
+# The action to run before the build.
+# This will download the source tarball defined in the spec file.
+actions:
+  - action: "spectool -g *.spec"
+    chroot: "epel-8-x86_64"
+
+# The spec file to use for the build.
+specfile_path: picom.spec
+
+# The list of chroots (target distributions) to build for.
+# This covers both EL8 and EL9 for 64-bit systems.
+targets:
+  epel-8-x86_64:
+    distros: [centos-stream-8, rhel-8]
+  epel-9-x86_64:
+    distros: [centos-stream-9, rhel-9]
