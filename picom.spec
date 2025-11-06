@@ -23,7 +23,14 @@ Source0:        %{url}/archive/v%{version}//%{name}-%{version}.tar.gz
 BuildRequires:  ninja-build
 BuildRequires:  gcc
 BuildRequires:  git
+%if 0%{?rhel} && 0%{?rhel} == 8
+# For EL8, install newer meson via pip to get >= 0.61.0
+BuildRequires:  python3-pip
+BuildRequires:  python3-setuptools
+%else
+# For EL9+, use system meson package
 BuildRequires:  meson
+%endif
 BuildRequires:  cmake
 BuildRequires:  libconfig-devel
 BuildRequires:  dbus-devel
@@ -84,6 +91,12 @@ and experimental backends.
 %autosetup -p1
 
 %build
+%if 0%{?rhel} && 0%{?rhel} == 8
+# Install newer meson via pip for EL8 to get >= 0.61.0
+pip3 install --user meson>=0.61.0
+export PATH=$HOME/.local/bin:$PATH
+%endif
+
 %meson                  \
     -Dwith_docs=true    \
     --wrap-mode=default \
