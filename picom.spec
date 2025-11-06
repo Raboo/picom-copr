@@ -24,6 +24,7 @@ BuildRequires:  ninja-build
 BuildRequires:  gcc
 BuildRequires:  git
 BuildRequires:  meson
+BuildRequires:  cmake
 BuildRequires:  libconfig-devel
 BuildRequires:  dbus-devel
 BuildRequires:  libev-devel
