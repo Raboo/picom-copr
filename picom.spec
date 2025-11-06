@@ -142,6 +142,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/*/*.png
 %{_datadir}/icons/hicolor/scalable/*/*.svg
 %{_mandir}/man1/*.1*
+%{_sysconfdir}/xdg/autostart/picom.desktop
+%{_libdir}/pkgconfig/picom-api.pc
 
 
 %changelog
