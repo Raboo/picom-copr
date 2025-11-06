@@ -96,6 +96,9 @@ and experimental backends.
 # Install newer meson via pip for EL8 to get >= 0.61.0
 pip3 install --user meson>=0.61.0
 export PATH="$HOME/.local/bin:$PATH"
+# Set compiler flags for EL8 compatibility
+export CFLAGS="$RPM_OPT_FLAGS -Wno-error"
+export CXXFLAGS="$RPM_OPT_FLAGS -Wno-error"
 # Use the pip-installed meson directly
 $HOME/.local/bin/meson setup builddir \
     -Dwith_docs=true \
