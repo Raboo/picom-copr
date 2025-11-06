@@ -10,52 +10,59 @@ URL:            https://github.com/yshui/picom
 Source0:        %{url}/archive/v%{version}//%{name}-%{version}.tar.gz
 
 # BuildRequires:  gcc-c++
-# BuildRequires:  meson
-# BuildRequires:  ninja-build
 # BuildRequires:  pkgconfig
-# BuildRequires:  libconfig-devel
-# BuildRequires:  libX11-devel
 # BuildRequires:  libXext-devel
-# BuildRequires:  libxcb-devel
 # BuildRequires:  libXcomposite-devel
 # BuildRequires:  libXdamage-devel
 # BuildRequires:  libXfixes-devel
 # BuildRequires:  libXinerama-devel
 # BuildRequires:  libXrandr-devel
 # BuildRequires:  libXrender-devel
-# BuildRequires:  pcre2-devel
-# BuildRequires:  pixman-devel
-# BuildRequires:  dbus-devel
 # BuildRequires:  systemd-devel
-# BuildRequires:  asciidoc
 
+BuildRequires:  ninja-build
+BuildRequires:  gcc
+BuildRequires:  git
+BuildRequires:  meson
+BuildRequires:  libconfig-devel
+BuildRequires:  dbus-devel
+BuildRequires:  libev-devel
+BuildRequires:  libX11-devel
+BuildRequires:  libX11-xcb
+BuildRequires:  libxcb-devel
+BuildRequires:  libGL-devel
+BuildRequires:  libEGL-devel
+BuildRequires:  libepoxy-devel
+BuildRequires:  pcre2-devel
+BuildRequires:  pixman-devel
+BuildRequires:  uthash-devel
+BuildRequires:  xcb-util-image-devel
+BuildRequires:  xcb-util-renderutil-devel
+BuildRequires:  xorg-x11-proto-devel
+BuildRequires:  xcb-util-devel
 BuildRequires:  asciidoc
 BuildRequires:  desktop-file-utils
-BuildRequires:  gcc
-BuildRequires:  libev-devel
-BuildRequires:  meson
-BuildRequires:  uthash-devel
 
-BuildRequires:  pkgconfig(dbus-1)
-BuildRequires:  pkgconfig(gl)
-BuildRequires:  pkgconfig(libconfig)
-BuildRequires:  pkgconfig(libpcre)
-BuildRequires:  pkgconfig(libxdg-basedir)
-BuildRequires:  pkgconfig(pixman-1)
-BuildRequires:  pkgconfig(x11)
-BuildRequires:  pkgconfig(xcb-composite)
-BuildRequires:  pkgconfig(xcb-damage)
-BuildRequires:  pkgconfig(xcb-image)
-BuildRequires:  pkgconfig(xcb-present)
-BuildRequires:  pkgconfig(xcb-randr)
-BuildRequires:  pkgconfig(xcb-render)
-BuildRequires:  pkgconfig(xcb-renderutil)
-BuildRequires:  pkgconfig(xcb-shape)
-BuildRequires:  pkgconfig(xcb-xfixes)
-BuildRequires:  pkgconfig(xcb-xinerama)
-BuildRequires:  pkgconfig(xcb)
-BuildRequires:  pkgconfig(xext)
-BuildRequires:  pkgconfig(xproto)
+# BuildRequires:  pkgconfig(dbus-1)
+# BuildRequires:  pkgconfig(gl)
+# BuildRequires:  pkgconfig(libconfig)
+# BuildRequires:  pkgconfig(libpcre)
+# BuildRequires:  pkgconfig(libxdg-basedir)
+# BuildRequires:  pkgconfig(pixman-1)
+# BuildRequires:  pkgconfig(x11)
+# BuildRequires:  pkgconfig(xcb-composite)
+# BuildRequires:  pkgconfig(xcb-damage)
+# BuildRequires:  pkgconfig(xcb-image)
+# BuildRequires:  pkgconfig(xcb-present)
+# BuildRequires:  pkgconfig(xcb-randr)
+# BuildRequires:  pkgconfig(xcb-render)
+# BuildRequires:  pkgconfig(xcb-renderutil)
+# BuildRequires:  pkgconfig(xcb-shape)
+# BuildRequires:  pkgconfig(xcb-xfixes)
+# BuildRequires:  pkgconfig(xcb-xinerama)
+# BuildRequires:  pkgconfig(xcb)
+# BuildRequires:  pkgconfig(xext)
+# BuildRequires:  pkgconfig(xproto)
 
 Requires:       hicolor-icon-theme
 
