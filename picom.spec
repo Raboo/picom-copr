@@ -95,20 +95,42 @@ and experimental backends.
 %if 0%{?rhel} && 0%{?rhel} == 8
 # Install newer meson via pip for EL8 to get >= 0.61.0
 pip3 install --user meson>=0.61.0
-export PATH=$HOME/.local/bin:$PATH
-%endif
-
+export PATH="$HOME/.local/bin:$PATH"
+# Use the pip-installed meson directly
+$HOME/.local/bin/meson setup builddir \
+    -Dwith_docs=true \
+    --wrap-mode=default \
+    --prefix=%{_prefix} \
+    --libdir=%{_libdir} \
+    --sysconfdir=%{_sysconfdir} \
+    --mandir=%{_mandir} \
+    --buildtype=release
+ninja -C builddir %{?_smp_mflags}
+%else
 %meson                  \
     -Dwith_docs=true    \
     --wrap-mode=default \
     %{nil}
 %meson_build
+%endif
 
 %install
+%if 0%{?rhel} && 0%{?rhel} == 8
+# For EL8, use ninja directly since we used direct meson commands
+DESTDIR=%{buildroot} ninja -C builddir install
+%else
+# For EL9+, use the standard meson macro
 %meson_install
+%endif
 
 %check
+%if 0%{?rhel} && 0%{?rhel} == 8
+# For EL8, use ninja directly for tests
+ninja -C builddir test || true
+%else
+# For EL9+, use the standard meson macro
 %meson_test
+%endif
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
