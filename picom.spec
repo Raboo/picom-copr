@@ -84,8 +84,9 @@ and experimental backends.
 %autosetup -p1
 
 %build
-%meson               \
-    -Dwith_docs=true \
+%meson                  \
+    -Dwith_docs=true    \
+    --wrap-mode=default \
     %{nil}
 %meson_build
 
