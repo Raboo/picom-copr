@@ -50,6 +50,7 @@ BuildRequires:  xorg-x11-proto-devel
 BuildRequires:  xcb-util-devel
 BuildRequires:  asciidoc
 BuildRequires:  desktop-file-utils
+BuildRequires:  rubygem-asciidoctor
 
 # BuildRequires:  pkgconfig(dbus-1)
 # BuildRequires:  pkgconfig(gl)
