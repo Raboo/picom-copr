@@ -150,6 +150,4 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 
 %changelog
-* Thu Jun 27 2024 Elias Abacioglu <1148206+Raboo@users.noreply.github.com> - 12.5-1
-- Update to version 12.5
-- Initial build for EL8 and EL9
+%autochangelog
